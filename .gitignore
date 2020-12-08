@@ -1,2 +1,3 @@
 .vscode
 ML/.ipynb_checkpoints
+djangoapi/db.sqlite3
