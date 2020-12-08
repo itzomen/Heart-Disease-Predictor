@@ -1,6 +1,6 @@
 from rest_framework.response import Response
 from rest_framework import generics
-from . models import PredResults
+from .models import PredResults
 import pandas as pd
 
 class PostsView(generics.ListAPIView):
@@ -25,5 +25,11 @@ class PostsView(generics.ListAPIView):
         model = pd.read_pickle(r"/home/omen/Desktop/DjangoProjects/Heart/Heart-Disease-Predictor/ML/new_model.pickle")
         result = model.pickle(
             [[A, B, C, D, E, F, G, H, I, J, K, L, M]])
-            
-        return Response(result[0])
+        Y = result[0]
+
+        serializer = PredSerializer(data=self.request.GET)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(result[0])
+
+        return Response(serializer.errors, status=400)

@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import PostsView
+from django.conf.urls.static import sta
 
 app_name='quiz'
 
