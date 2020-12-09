@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex flex-column justify-content-center align-items-center" style="height: 80vh">
     <div class="p-2">
-      <h1 v-if="!APIResult.length">Enter to predict Your Stats</h1>
+      <h1 v-if="!APIResult.length">Heart Disease Predictor</h1>
       <h1 v-else style="font-size:4rem">{{APIResult}}</h1>
     </div>
     <div class="p-2">
@@ -133,7 +133,6 @@
 </template>
 
 <script>
-console.log('ere')
 import { getAPI } from "@/axios";
 export default {
     name: "Posts",
@@ -171,7 +170,8 @@ export default {
                     G: this.heartdata.G,
                     H: this.heartdata.H,
                     I: this.heartdata.I,
-                    J: this.heartdata.K,
+                    J: this.heartdata.J,
+                    K: this.heartdata.K,
                     L: this.heartdata.L,
                     M: this.heartdata.M
                 }

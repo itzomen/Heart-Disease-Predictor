@@ -1,6 +1,7 @@
 from rest_framework.response import Response
 from rest_framework import generics
 from .models import PredResults
+from . serializers import PredSerializer
 import pandas as pd
 
 class PostsView(generics.ListAPIView):
@@ -23,7 +24,7 @@ class PostsView(generics.ListAPIView):
         M = float(self.request.GET.get('M'))
 
         model = pd.read_pickle(r"/home/omen/Desktop/DjangoProjects/Heart/Heart-Disease-Predictor/ML/new_model.pickle")
-        result = model.pickle(
+        result = model.predict(
             [[A, B, C, D, E, F, G, H, I, J, K, L, M]])
             
         Y = result[0]
