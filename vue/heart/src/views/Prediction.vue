@@ -1,8 +1,9 @@
 <template>
   <div class="d-flex flex-column justify-content-center align-items-center" style="height: 80vh">
-    <div class="p-2">
-      <h1 v-if="!APIResult.length">Heart Disease Predictor</h1>
-      <h1 v-else style="font-size:4rem">{{ APIResult }}</h1>
+    <div class="p-2" style="text-align:center">
+      <h1>Heart Disease Predictor</h1>
+      <h1 v-if="APIResult.length != []" style="font-size:4rem;">{{ APIResult }}</h1>  
+      <h6>presence (values 1,2,3,4) | absence (value 0)</h6>
     </div>
     <div class="p-2">
         <form @submit.prevent>
