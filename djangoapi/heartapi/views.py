@@ -25,6 +25,7 @@ class PostsView(generics.ListAPIView):
         model = pd.read_pickle(r"/home/omen/Desktop/DjangoProjects/Heart/Heart-Disease-Predictor/ML/new_model.pickle")
         result = model.pickle(
             [[A, B, C, D, E, F, G, H, I, J, K, L, M]])
+            
         Y = result[0]
 
         serializer = PredSerializer(data=self.request.GET)
