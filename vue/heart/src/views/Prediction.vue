@@ -2,7 +2,7 @@
   <div class="d-flex flex-column justify-content-center align-items-center" style="height: 80vh">
     <div class="p-2">
       <h1 v-if="!APIResult.length">Heart Disease Predictor</h1>
-      <h1 v-else style="font-size:4rem">{{APIResult}}</h1>
+      <h1 v-else style="font-size:4rem">{{ APIResult }}</h1>
     </div>
     <div class="p-2">
         <form @submit.prevent>
