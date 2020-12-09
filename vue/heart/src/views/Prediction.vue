@@ -1,5 +1,5 @@
 <template>
-    <div>Hihhhn</div>
+    <h1>Hi</h1>
 </template>
 
 <script>
@@ -46,6 +46,14 @@ export default {
                     M: this.heartdata.M
                 }
             })
+            .then(response => {
+                console.log("Received data successfully");
+                this.APIResult = response.data;
+                console.log(response.data);
+            })
+            .catch(err => {
+                console.log(err);
+            });
         }
     }
  };
